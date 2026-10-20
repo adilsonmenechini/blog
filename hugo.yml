@@ -56,10 +56,12 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 
 # O PaperMod mostra o seletor PT/EN no topo automaticamente
+# Conteúdo: PT em content/pt (URL na raiz de /blog/), EN em content/en (URL /blog/en/)
 languages:
   pt:
     locale: "pt-BR"
     label: "PT"
+    contentDir: "content/pt"
     weight: 1
     menu:
       main:
@@ -79,6 +81,7 @@ languages:
   en:
     locale: "en-US"
     label: "EN"
+    contentDir: "content/en"
     weight: 2
     params:
       description: "Articles about SRE, DevOps, Kubernetes and applied AI."

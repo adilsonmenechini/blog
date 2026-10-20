@@ -1,0 +1,172 @@
+/* ============================================================
+   Tema "Verde moderno" — Adilson Menechini Blog
+   Sobrescreve as variáveis do PaperMod (carregado por último)
+   ============================================================ */
+
+:root {
+  /* Claro: fundo levemente esverdeado, papel limpo */
+  --theme: #f6fbf8;
+  --entry: #ffffff;
+  --primary: rgba(28, 42, 35, 0.95);
+  --secondary: rgba(28, 42, 35, 0.6);
+  --tertiary: rgba(28, 42, 35, 0.12);
+  --content: rgba(28, 42, 35, 0.82);
+  --hljs-bg: #eef4f0;
+  --code-bg: #eef4f0;
+  --border: #dee9e3;
+  --accent: #0a9159;
+  --accent-strong: #087a4c;
+  --accent-soft: rgba(10, 145, 89, 0.12);
+}
+
+.dark {
+  /* Escuro: quase-preto com tom esverdeado */
+  --theme: #0a100d;
+  --entry: #111a15;
+  --primary: rgba(233, 244, 238, 0.94);
+  --secondary: rgba(233, 244, 238, 0.6);
+  --tertiary: rgba(233, 244, 238, 0.12);
+  --content: rgba(233, 244, 238, 0.8);
+  --hljs-bg: #0e1913;
+  --code-bg: #0e1913;
+  --border: #1c2a22;
+  --accent: #34d399;
+  --accent-strong: #6ee7b7;
+  --accent-soft: rgba(52, 211, 153, 0.14);
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: var(--primary);
+}
+a:hover,
+a:focus {
+  color: var(--accent-strong);
+}
+
+/* Links dentro do artigo: verdes com sublinhado suave */
+.post-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  text-underline-offset: 3px;
+}
+.post-content a:hover,
+.post-content a:focus {
+  color: var(--accent-strong);
+  text-decoration-color: var(--accent-strong);
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.logo a,
+.logo a:hover,
+.logo a:focus {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.nav ul li a {
+  color: var(--secondary);
+  border-radius: 8px;
+}
+.nav ul li a:hover,
+.nav ul li a:focus {
+  color: var(--accent-strong);
+}
+.nav ul li a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- Seleção de texto ---------- */
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+/* ---------- Listagem de artigos ---------- */
+
+.first-entry,
+.post-entry {
+  border-radius: 14px;
+}
+.post-entry {
+  border-bottom: 1px solid var(--border);
+}
+.entry-header h2 a:hover,
+.entry-header h2 a:focus {
+  color: var(--accent-strong);
+}
+.entry-footer {
+  color: var(--secondary);
+}
+
+/* ---------- Tags ---------- */
+
+.post-tags a {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent-soft);
+  border-radius: 4px;
+  padding: 1px 2px;
+}
+.post-tags a:hover,
+.post-tags a:focus {
+  color: var(--accent-strong);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Código ---------- */
+
+.post-content pre,
+.post-content div.highlight {
+  border-radius: 12px;
+}
+code,
+pre.code {
+  border-radius: 6px;
+}
+.copy-code-button {
+  border-radius: 6px;
+}
+
+/* ---------- Citações ---------- */
+
+.post-content blockquote {
+  border-left: 3px solid var(--accent);
+  border-radius: 0;
+  font-style: italic;
+}
+
+/* ---------- Breadcrumb e TOC ---------- */
+
+.breadcrumbs a,
+.toc a,
+.entry-hint a {
+  color: var(--accent) !important;
+}
+.breadcrumbs a:hover,
+.toc a:hover {
+  color: var(--accent-strong) !important;
+}
+
+/* ---------- Botão "ir ao topo" ---------- */
+
+#top-link {
+  color: var(--accent);
+  opacity: 0.7;
+}
+#top-link:hover {
+  opacity: 1;
+}
+
+/* ---------- Rodapé ---------- */
+
+.footer a {
+  color: var(--secondary);
+}
+.footer a:hover {
+  color: var(--accent-strong);
+}
