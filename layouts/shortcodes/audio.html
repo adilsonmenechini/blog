@@ -1,0 +1,13 @@
+<figure class="post-audio">
+  <figcaption>
+    {{ $lang := site.Language.Lang }}
+    {{ if eq $lang "pt" }}🎧 Ouvir este artigo
+    {{ else if eq $lang "es" }}🎧 Escuchar este artículo
+    {{ else }}🎧 Listen to this article
+    {{ end }}
+  </figcaption>
+  {{ $base := (site.GetPage "/").RelPermalink }}
+  <audio controls preload="none" src="{{ $base }}audio/{{ site.Language.Lang }}/{{ .Get "slug" }}.mp3"></audio>
+  {{ with .Get "caption" }}<small>{{ . }}</small>{{ end }}
+</figure>
+{{/* ritmo alternativo: {{< audio slug="sre-reliability" >}} */}}

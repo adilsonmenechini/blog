@@ -61,6 +61,30 @@
 }
 
 /* ============================================================
+   Player de audio (audiobook dos artigos)
+   ============================================================ */
+.post-audio {
+  margin: 1rem 0 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background-color: var(--accent-primary-rgba-03);
+}
+.post-audio figcaption {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+.post-audio audio {
+  width: 100%;
+  height: 2.25rem;
+}
+.post-audio small {
+  color: var(--text-muted);
+}
+
+/* ============================================================
    Roxos HARDCODED no CSS do tema (não passam por variáveis).
    Regra por regra, com os seletores exatos do Mana.
    ============================================================ */

@@ -5,6 +5,8 @@ draft: false
 tags: ["Agentes de IA", "Segurança", "SPIFFE", "Zero Trust"]
 summary: "API keys armazenadas em variáveis de ambiente não provam quem execute o que. Com SPIFFE e SPIRE, identidade passa a ser uma propriedade verificável do workload, o que muda completamente a segurança de agentes autônomos."
 ---
+{{< audio slug="ai-agent-identity" >}}
+
 
 Estamos construindo sistemas de IA que executam código, consultam bancos de dados, chamam APIs, acessam serviços em nuvem e delegam tarefas para outros agentes. Em alguns casos, esses sistemas já operam com autonomia suficiente para executar sequências inteiras de ações sem que um humano aprove cada etapa.
 

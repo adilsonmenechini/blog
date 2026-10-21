@@ -5,6 +5,8 @@ draft: false
 tags: ["meta", "SRE"]
 summary: "Por que criei este blog e o que você vai encontrar por aqui."
 ---
+{{< audio slug="hello-world" >}}
+
 
 Finalmente decidi criar um espaço para escrever. Depois de mais de 17 anos em tecnologia (sendo uns 7 focados em DevOps/SRE), acumulei muita coisa que vale a pena documentar: experimentos que deram certo (e os que deram errado), decisões de arquitetura, automações e recados que eu mesmo gostaria de ter lido há alguns anos.
 

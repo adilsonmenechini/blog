@@ -5,6 +5,8 @@ draft: false
 tags: ["SRE", "DevOps", "Reliability Engineering", "Observabilidade", "Gestão de Incidentes", "SLO", "Cloud Native"]
 summary: "Perseguir 100% de disponibilidade pode deixar a organização mais lenta, mais cara e nem sempre mais confiável. SLOs, error budgets, automação e postmortems transformam confiabilidade em decisão compartilhada, não em disputa de opiniões."
 ---
+{{< audio slug="sre-reliability" >}}
+
 
 Existe uma ideia bastante difundida no mundo da infraestrutura: o trabalho de quem opera sistemas é evitar que eles caiam. Quanto menos incidentes, melhor. Quanto maior a disponibilidade, melhor. E, se fosse possível, tudo deveria funcionar 100% do tempo.
 

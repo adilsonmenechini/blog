@@ -5,6 +5,8 @@ draft: false
 tags: ["Kubernetes", "FinOps", "Autoscaling"]
 summary: "Escalar a aplicação na demanda e dimensionar a infraestrutura por trás dela são problemas diferentes. Com KEDA e Karpenter trabalhando juntos, o cluster escala quando precisa, reduz quando pode e custa menos para entregar o mesmo resultado."
 ---
+{{< audio slug="karpenter-keda" >}}
+
 
 Você já parou para pensar quanto dinheiro pode estar gastando com um cluster Kubernetes que fica ligado o dia inteiro, mesmo quando quase não tem trabalho para executar?
 
