@@ -14,7 +14,7 @@
     {{ range site.Menus.main }}
       <li class="glass-dock-item">
         <a
-          href="{{ .URL | relLangURL }}"
+          href="{{ .URL }}"
           class="glass-dock-link {{ if $.IsMenuCurrent "main" . }}active{{ end }}">
           {{ .Name }}
         </a>
