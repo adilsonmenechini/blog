@@ -1,0 +1,124 @@
+# ============ CONFIG PREVIEW: tema hugo-mikosch ============
+# Use com: hugo server --config hugo-mikosch.yml
+# Este arquivo NÃO afeta o site publicado (hugo.yml/PaperMod) até você aprovar.
+baseURL: "https://adilsonmenechini.github.io/blog/"
+defaultContentLanguage: "pt"
+locale: "pt-br"
+title: "Adilson Menechini — Blog"
+theme: "hugo-mikosch"
+enableRobotsTXT: true
+enableEmoji: true
+
+pagination:
+  pagerSize: 10
+
+# Mesma lógica de datas do tema (ordenar por publishDate)
+frontmatter:
+  date: ["date", "publishDate", "lastmod", ":fileModTime"]
+  lastmod: [":git", ":fileModTime"]
+
+taxonomies:
+  tag: tags
+
+# O PaperMod mostra o seletor PT/EN no topo automaticamente
+# Conteúdo: PT em content/pt (URL na raiz de /blog/), EN em content/en (URL /blog/en/)
+languages:
+  pt:
+    locale: "pt-BR"
+    label: "PT"
+    contentDir: "content/pt"
+    weight: 1
+    params:
+      subtitle: "SRE · Platform Engineering · IA aplicada"
+      hero_kicker: "Blog"
+      hero_title: "Ideias que sobrevivem à próxima outage"
+      hero_intro: "SRE, platform engineering, Kubernetes, GitOps, IaC e o que aprender na noite mais recente — publicados de forma clara, em PT e EN."
+      # CTAs
+      cta_primary:
+        text: "Ler os artigos"
+        url: "/posts/"
+      cta_secondary:
+        text: "Sítio / Currículo"
+        url: "https://adilsonmenechini.github.io/welcome/"
+      # Números de impacto (iguais à welcome)
+      highlights:
+        - value: "17+"
+          label: "anos em tecnologia"
+        - value: "7+"
+          label: "anos em DevOps/SRE"
+        - value: "3"
+          label: "clouds: AWS, Azure, GCP"
+      # Cartões de temas recorrentes
+      feature_title: "O que você vai encontrar"
+      feature_intro: "Temas que uso no dia a dia e que aparecerão por aqui."
+      feature_cards:
+        - title: "Kubernetes & GitOps"
+          text: "ArgoCD, rollouts, gestão de cluster e aqueles bugs que só aparecem em produção."
+        - title: "IaC & FinOps"
+          text: "Terraform, Terragrunt, Packer e Ansible — infra que escala sem queimar o orçamento."
+        - title: "IA aplicada"
+          text: "Agentes, RAG e LLMs integrados a ferramentas de SRE e plataforma."
+      posts_title: "Últimos artigos"
+      posts_intro: "Publicagens recentes, um tema de cada vez."
+    menu:
+      main:
+        - name: "Artigos"
+          url: "/posts/"
+          weight: 5
+        - name: "Tags"
+          url: "/tags/"
+          weight: 10
+        - name: "Sítio / Currículo"
+          url: "https://adilsonmenechini.github.io/welcome/"
+          weight: 20
+
+  en:
+    locale: "en-US"
+    label: "EN"
+    contentDir: "content/en"
+    weight: 2
+    params:
+      subtitle: "SRE · Platform Engineering · Applied AI"
+      hero_kicker: "Blog"
+      hero_title: "Ideas that survive the next outage"
+      hero_intro: "SRE, platform engineering, Kubernetes, GitOps, IaC and what a recent late night taught me — written clearly, in EN and PT."
+      cta_primary:
+        text: "Read the posts"
+        url: "/en/posts/"
+      cta_secondary:
+        text: "Website / Résumé"
+        url: "https://adilsonmenechini.github.io/welcome/"
+      highlights:
+        - value: "17+"
+          label: "years in tech"
+        - value: "7+"
+          label: "years in DevOps/SRE"
+        - value: "3"
+          label: "clouds: AWS, Azure, GCP"
+      feature_title: "What you will find"
+      feature_intro: "Themes I work with daily and will cover here."
+      feature_cards:
+        - title: "Kubernetes & GitOps"
+          text: "ArgoCD, rollouts, cluster management, and those bugs that only show up in production."
+        - title: "IaC & FinOps"
+          text: "Terraform, Terragrunt, Packer and Ansible — infrastructure that scales without torching the bill."
+        - title: "Applied AI"
+          text: "Agents, RAG and LLMs integrated with SRE and platform tooling."
+      posts_title: "Latest posts"
+      posts_intro: "Recent publications, one theme at a time."
+    menu:
+      main:
+        - name: "Posts"
+          url: "/posts/"
+          weight: 5
+        - name: "Tags"
+          url: "/tags/"
+          weight: 10
+        - name: "Website / Résumé"
+          url: "https://adilsonmenechini.github.io/welcome/"
+          weight: 20
+
+params:
+  theme_name: "Adilson Menechini — Blog"
+  author:
+    name: "Adilson Menechini"

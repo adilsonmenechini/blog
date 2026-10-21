@@ -3,5 +3,9 @@
 /resources/
 .hugo_build.lock
 
+# Temas de preview (presentes apenas localmente, não afetam o build em produção
+# que usa hugo.yml + PaperMod)
+themes/hugo-mikosch/
+
 # Sistema
 .DS_Store

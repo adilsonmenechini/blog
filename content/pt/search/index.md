@@ -1,4 +1,0 @@
----
-title: "Busca"
-layout: "search"
----

@@ -1,104 +1,160 @@
+# ============ CONFIG PREVIEW: tema hugo-mana-theme ============
+# Use com: hugo server --config hugo-mana.yml
+# Este arquivo NÃO afeta o site publicado (hugo.yml/PaperMod) até você aprovar.
 baseURL: "https://adilsonmenechini.github.io/blog/"
 defaultContentLanguage: "pt"
 locale: "pt-br"
-title: "Adilson Menechini — Blog"
-theme: "PaperMod"
+title: "Adilson's Guide"
+theme: "hugo-mana-theme"
 enableRobotsTXT: true
-enableEmoji: true
 
 pagination:
-  pagerSize: 10
-
-# Necessário para a busca do PaperMod (Fuse.js)
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
-
-minify:
-  disableXML: true
-  minifyOutput: true
-
-params:
-  author: "Adilson Menechini"
-  description: "SRE · Platform Engineering · Kubernetes · GitOps · Observabilidade · IA aplicada"
-  keywords: ["SRE", "DevOps", "Kubernetes", "GitOps", "Terraform", "Observabilidade", "IA"]
-  defaultTheme: auto        # claro/escuro automático, respeita a preferência do sistema
-  disableThemeToggle: false
-  ShowReadingTime: true
-  ShowShareButtons: false
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowToc: true
-  TocOpen: false
-  comments: false
-
-  cover:
-    hidden: true
-
-  socialIcons:
-    - name: github
-      url: "https://github.com/adilsonmenechini"
-    - name: linkedin
-      url: "https://www.linkedin.com/in/adilsonmenechini"
-    - name: email
-      url: "mailto:adilsonmenechini@gmail.com"
-
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    keys: ["title", "permalink", "summary", "content"]
-
-# O PaperMod mostra o seletor PT/EN no topo automaticamente
-# Conteúdo: PT em content/pt (URL na raiz de /blog/), EN em content/en (URL /blog/en/)
-languages:
-  pt:
-    locale: "pt-BR"
-    label: "PT"
-    contentDir: "content/pt"
-    weight: 1
-    menu:
-      main:
-        - name: "Artigos"
-          url: "/posts/"
-          weight: 5
-        - name: "Busca"
-          url: "/search/"
-          weight: 10
-        - name: "Tags"
-          url: "/tags/"
-          weight: 15
-        - name: "Sítio / Currículo"
-          url: "https://adilsonmenechini.github.io/welcome/"
-          weight: 20
-
-  en:
-    locale: "en-US"
-    label: "EN"
-    contentDir: "content/en"
-    weight: 2
-    params:
-      description: "Articles about SRE, DevOps, Kubernetes and applied AI."
-    menu:
-      main:
-        - name: "Posts"
-          url: "/posts/"
-          weight: 5
-        - name: "Search"
-          url: "/search/"
-          weight: 10
-        - name: "Tags"
-          url: "/tags/"
-          weight: 15
-        - name: "Website / Résumé"
-          url: "https://adilsonmenechini.github.io/welcome/"
-          weight: 20
+  pageSize: 10
 
 taxonomies:
   tag: tags
+
+markup:
+  tableOfContents:
+    startLevel: 1
+    endLevel: 6
+    ordered: false
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      attribute:
+        block: true
+        title: true
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    noClasses: false
+    style: "catppuccin-macchiato"
+
+# JSON na home alimenta a busca full-text do tema
+outputs:
+  home: ["HTML", "JSON"]
+
+sitemap:
+  changefreq: "weekly"
+  priority: 0.5
+  filename: "sitemap.xml"
+
+# Conteúdo: PT em content/pt (URL na raiz), EN em content/en (URL /en/)
+languages:
+  pt:
+    locale: "pt-BR"
+    label: "Português"
+    direction: "ltr"
+    contentDir: "content/pt"
+    weight: 1
+    title: "Adilson's Guide"
+    params:
+      description: "Um blog pessoal sobre SRE, engenharia de plataforma, Kubernetes, GitOps, IaC, observabilidade e IA aplicada — e de tudo um pouco."
+      author: "Adilson Menechini"
+      heroTitleLine1: "Adilson's Guide"
+      heroTitleLine2: "to everything"
+      footerText: "Feito com Hugo e o tema Mana"
+      custom404Message: "Desculpe, a página que você procura não foi encontrada."
+    menus:
+      main:
+        - name: "Início"
+          pageRef: "/"
+          weight: 10
+        - name: "Artigos"
+          pageRef: "/posts"
+          weight: 20
+        - name: "Tags"
+          pageRef: "/tags"
+          weight: 30
+        - name: "Sobre"
+          pageRef: "/about"
+          weight: 40
+
+  en:
+    locale: "en-US"
+    label: "English"
+    direction: "ltr"
+    contentDir: "content/en"
+    weight: 2
+    title: "Adilson's Guide"
+    params:
+      description: "A personal blog about SRE, platform engineering, Kubernetes, GitOps, IaC, observability and applied AI — plus a bit of everything."
+      author: "Adilson Menechini"
+      heroTitleLine1: "Adilson's Guide"
+      heroTitleLine2: "to everything"
+      footerText: "Built with Hugo and the Mana theme"
+      custom404Message: "Sorry, the page you are looking for could not be found."
+    menus:
+      main:
+        - name: "Home"
+          pageRef: "/"
+          weight: 10
+        - name: "Posts"
+          pageRef: "/posts"
+          weight: 20
+        - name: "Tags"
+          pageRef: "/tags"
+          weight: 30
+        - name: "About"
+          pageRef: "/about"
+          weight: 40
+
+  es:
+    locale: "es-ES"
+    label: "Español"
+    direction: "ltr"
+    contentDir: "content/es"
+    weight: 3
+    title: "Adilson's Guide"
+    params:
+      description: "Un blog personal sobre SRE, platform engineering, Kubernetes, GitOps, IaC, observabilidad e IA aplicada — y de todo un poco."
+      author: "Adilson Menechini"
+      heroTitleLine1: "Adilson's Guide"
+      heroTitleLine2: "to everything"
+      footerText: "Hecho con Hugo y el tema Mana"
+      custom404Message: "Lo sentimos, la página que buscás no fue encontrada."
+    menus:
+      main:
+        - name: "Inicio"
+          pageRef: "/"
+          weight: 10
+        - name: "Artículos"
+          pageRef: "/posts"
+          weight: 20
+        - name: "Etiquetas"
+          pageRef: "/tags"
+          weight: 30
+        - name: "Sobre mí"
+          pageRef: "/about"
+          weight: 40
+
+params:
+  enableIntegrity: false
+  relatedPostsCount: 3
+  description: "SRE · Platform Engineering · Kubernetes · GitOps · Observabilidade · IA aplicada"
+  author: "Adilson Menechini"
+  footerText: "Feito com Hugo e agentes de IA"
+
+  avatar:
+    home:
+      assetPath: "images/adilson-avatar.svg"
+    about:
+      assetPath: "images/adilson-avatar.svg"
+
+  social:
+    github: "https://github.com/adilsonmenechini"
+    linkedin: "https://www.linkedin.com/in/adilsonmenechini"
+    email: "adilsonmenechini@gmail.com"
+
+  codeHighlight:
+    darkTheme: "catppuccin-macchiato"
+    lightTheme: "catppuccin-frappe"
+
+  copyright:
+    startYear: 2026
+    owner: "Adilson Menechini"
+
+  admonitions:
+    alertStyle: "favicon"

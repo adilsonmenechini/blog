@@ -1,0 +1,88 @@
+# Tradução PT-BR do tema hugo-mana (site-level i18n sobrescreve o tema)
+# Alertas/admonições
+note = "Nota"
+tip = "Dica"
+important = "Importante"
+warning = "Aviso"
+caution = "Cuidado"
+info = "Informação"
+success = "Sucesso"
+question = "Pergunta"
+danger = "Perigo"
+bug = "Bug"
+example = "Exemplo"
+
+# Cabeçalho e navegação
+menu = "Menu"
+search = "Busca"
+searchPlaceholder = "Buscar..."
+clearSearch = "Limpar busca"
+closeSearch = "Fechar busca"
+toggleMenu = "Abrir menu"
+closeMenu = "Fechar menu"
+toggleTheme = "Alternar tema"
+language = "Idioma"
+
+# Acessibilidade
+skipToMain = "Pular para o conteúdo principal"
+scrollToTop = "Voltar ao topo"
+
+# Home
+home = "Início"
+recentPosts = "Artigos recentes"
+
+# Listas e filtros
+posts = "Artigos"
+filters = "Filtros"
+searchTags = "Buscar tags..."
+tagsLabel = "Tags"
+yearMonth = "Ano e mês"
+allDates = "Todas as datas"
+clearFilters = "Limpar filtros"
+
+# Paginação
+pageOf = "Página %s de %s"
+postSingular = "artigo"
+postPlural = "artigos"
+pageSingular = "página"
+pagePlural = "páginas"
+postsOnThisPage = "nesta página"
+paginationFirst = "Primeira"
+paginationPrev = "Anterior"
+paginationNext = "Próxima"
+paginationLast = "Última"
+
+# Links de navegação
+backToHome = "Voltar ao início"
+allTags = "Todas as tags"
+readMore = "Ler mais"
+
+# Arquivo
+archive = "Arquivo"
+
+# Artigo individual
+relatedPosts = "Artigos relacionados"
+tags = "Tags"
+navPrev = "Anterior"
+navNext = "Próximo"
+
+# Metadados do post
+wordCount = "palavras"
+readingTime = "min"
+
+# TOC
+tableOfContents = "Nesta página"
+toggleToc = "Abrir/fechar sumário"
+
+# Página de tags
+tagsHelp = "Clique em uma tag para ver os artigos relacionados"
+searchNoResults = "Nenhum resultado encontrado"
+searchNoTagsFound = "Nenhuma tag encontrada"
+
+# Buy Me a Coffee
+buyMeACoffeeDescription = "Apoie o blog no Buy me a coffee!"
+
+# 404
+404Title = "Esta página não existe"
+404DefaultMessage = "Desculpe, a página que você procura não foi encontrada."
+404ReturnHome = "Voltar para a página inicial"

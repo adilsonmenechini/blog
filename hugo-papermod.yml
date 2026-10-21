@@ -1,0 +1,126 @@
+baseURL: "https://adilsonmenechini.github.io/blog/"
+defaultContentLanguage: "pt"
+locale: "pt-br"
+title: "Adilson Menechini — Blog"
+theme: "PaperMod"
+enableRobotsTXT: true
+enableEmoji: true
+
+pagination:
+  pagerSize: 10
+
+# Necessário para a busca do PaperMod (Fuse.js)
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  author: "Adilson Menechini"
+  description: "SRE · Platform Engineering · Kubernetes · GitOps · Observabilidade · IA aplicada"
+  keywords: ["SRE", "DevOps", "Kubernetes", "GitOps", "Terraform", "Observabilidade", "IA"]
+  defaultTheme: auto        # claro/escuro automático, respeita a preferência do sistema
+  disableThemeToggle: false
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+  comments: false
+
+  cover:
+    hidden: true
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/adilsonmenechini"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/adilsonmenechini"
+    - name: email
+      url: "mailto:adilsonmenechini@gmail.com"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# O PaperMod mostra o seletor PT/EN no topo automaticamente
+# Conteúdo: PT em content/pt (URL na raiz de /blog/), EN em content/en (URL /blog/en/)
+languages:
+  pt:
+    locale: "pt-BR"
+    label: "PT"
+    contentDir: "content/pt"
+    weight: 1
+    menu:
+      main:
+        - name: "Artigos"
+          url: "/posts/"
+          weight: 5
+        - name: "Busca"
+          url: "/search/"
+          weight: 10
+        - name: "Tags"
+          url: "/tags/"
+          weight: 15
+        - name: "Sítio / Currículo"
+          url: "https://adilsonmenechini.github.io/welcome/"
+          weight: 20
+
+  en:
+    locale: "en-US"
+    label: "EN"
+    contentDir: "content/en"
+    weight: 2
+    params:
+      description: "Articles about SRE, DevOps, Kubernetes and applied AI."
+    menu:
+      main:
+        - name: "Posts"
+          url: "/posts/"
+          weight: 5
+        - name: "Search"
+          url: "/search/"
+          weight: 10
+        - name: "Tags"
+          url: "/tags/"
+          weight: 15
+        - name: "Website / Résumé"
+          url: "https://adilsonmenechini.github.io/welcome/"
+          weight: 20
+
+  es:
+    locale: "es-ES"
+    label: "ES"
+    contentDir: "content/es"
+    weight: 3
+    params:
+      description: "Artículos sobre SRE, DevOps, Kubernetes e IA aplicada."
+    menu:
+      main:
+        - name: "Artículos"
+          url: "/posts/"
+          weight: 5
+        - name: "Búsqueda"
+          url: "/search/"
+          weight: 10
+        - name: "Tags"
+          url: "/tags/"
+          weight: 15
+        - name: "Sitio / CV"
+          url: "https://adilsonmenechini.github.io/welcome/"
+          weight: 20
+
+taxonomies:
+  tag: tags

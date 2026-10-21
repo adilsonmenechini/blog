@@ -1,0 +1,88 @@
+# Tradução ES do tema hugo-mana (site-level i18n sobrescreve o tema)
+# Alertas/admoniciones
+note = "Nota"
+tip = "Tip"
+important = "Importante"
+warning = "Advertencia"
+caution = "Cuidado"
+info = "Información"
+success = "Éxito"
+question = "Pregunta"
+danger = "Peligro"
+bug = "Bug"
+example = "Ejemplo"
+
+# Encabezado y navegación
+menu = "Menú"
+search = "Búsqueda"
+searchPlaceholder = "Buscar..."
+clearSearch = "Limpiar búsqueda"
+closeSearch = "Cerrar búsqueda"
+toggleMenu = "Abrir menú"
+closeMenu = "Cerrar menú"
+toggleTheme = "Cambiar tema"
+language = "Idioma"
+
+# Accesibilidad
+skipToMain = "Saltar al contenido principal"
+scrollToTop = "Volver arriba"
+
+# Home
+home = "Inicio"
+recentPosts = "Artículos recientes"
+
+# Listas y filtros
+posts = "Artículos"
+filters = "Filtros"
+searchTags = "Buscar etiquetas..."
+tagsLabel = "Etiquetas"
+yearMonth = "Año y mes"
+allDates = "Todas las fechas"
+clearFilters = "Limpiar filtros"
+
+# Paginación
+pageOf = "Página %s de %s"
+postSingular = "artículo"
+postPlural = "artículos"
+pageSingular = "página"
+pagePlural = "páginas"
+postsOnThisPage = "en esta página"
+paginationFirst = "Primera"
+paginationPrev = "Anterior"
+paginationNext = "Siguiente"
+paginationLast = "Última"
+
+# Links de navegación
+backToHome = "Volver al inicio"
+allTags = "Todas las etiquetas"
+readMore = "Leer más"
+
+# Archivo
+archive = "Archivo"
+
+# Artículo individual
+relatedPosts = "Artículos relacionados"
+tags = "Etiquetas"
+navPrev = "Anterior"
+navNext = "Siguiente"
+
+# Metadatos del post
+wordCount = "palabras"
+readingTime = "min"
+
+# TOC
+tableOfContents = "En esta página"
+toggleToc = "Abrir/cerrar índice"
+
+# Página de etiquetas
+tagsHelp = "Hacé clic en una etiqueta para ver los artículos relacionados"
+searchNoResults = "No se encontraron resultados"
+searchNoTagsFound = "No se encontraron etiquetas"
+
+# Buy Me a Coffee
+buyMeACoffeeDescription = "Apoyá el blog en Buy me a coffee!"
+
+# 404
+404Title = "Esta página no existe"
+404DefaultMessage = "Lo sentimos, la página que buscás no fue encontrada."
+404ReturnHome = "Volver a la página inicial"

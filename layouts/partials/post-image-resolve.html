@@ -1,0 +1,74 @@
+{{/*
+  Site override do partial do tema Mana (post-image-resolve).
+  Corrige recursão infinita entre páginas traduzidas quando nenhuma
+  tem imagem (o original chama o partial da tradução irmã, que chama
+  de volta o original → stack overflow).
+
+  Mantém a ordem de resolução da própria página:
+  1. Front matter (Params.image) → page resources / assets
+  2. Auto-descoberta em static/images ou assets/images pelo TranslationBaseName
+  Fallback: herda apenas o front matter `image` de uma tradução irmã,
+  sem recursão (adequado para imagens em static/).
+*/}}
+{{ $image := .Params.image }}
+{{ $imageResource := false }}
+
+{{ if $image }}
+  {{ $imageResource = .Resources.Get $image }}
+  {{ if not $imageResource }}
+    {{ $imageResource = .Resources.GetMatch $image }}
+  {{ end }}
+  {{ if not $imageResource }}
+    {{ $imageResource = resources.Get $image }}
+  {{ end }}
+{{ else }}
+  {{ $titleSlug := "" }}
+  {{ if .File }}
+    {{ $titleSlug = .File.TranslationBaseName | urlize }}
+  {{ else }}
+    {{ $titleSlug = .Title | urlize }}
+  {{ end }}
+  {{ $imageExtensions := slice ".png" ".jpg" ".jpeg" ".webp" }}
+  {{ range $imageExtensions }}
+    {{ $potentialImage := printf "/images/%s%s" $titleSlug . }}
+    {{ $staticPath := printf "static/images/%s%s" $titleSlug . }}
+    {{ $assetPath := printf "assets/images/%s%s" $titleSlug . }}
+    {{ if not (findRE "%" $staticPath) }}
+      {{ if fileExists $staticPath }}
+        {{ $image = $potentialImage }}
+        {{ break }}
+      {{ end }}
+    {{ end }}
+    {{ if not (findRE "%" $assetPath) }}
+      {{ if fileExists $assetPath }}
+        {{ $image = $potentialImage }}
+        {{ $imageResource = resources.Get (printf "images/%s%s" $titleSlug .) }}
+        {{ break }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ if not $image }}
+    {{/* Herda imagem declarada em front matter de tradução irmã, sem recursão */}}
+    {{ range .AllTranslations }}
+      {{ if and (ne .Lang $.Lang) .Params.image }}
+        {{ $image = .Params.image }}
+      {{ end }}
+    {{ end }}
+    {{ if $image }}
+      {{/* Caminho herdado: resolve como page resource da irmã se possível */}}
+      {{ range .AllTranslations }}
+        {{ if and (ne .Lang $.Lang) .Params.image }}
+          {{ $sibRes := .Resources.Get $image }}
+          {{ if not $sibRes }}
+            {{ $sibRes = .Resources.GetMatch $image }}
+          {{ end }}
+          {{ if $sibRes }}
+            {{ $imageResource = $sibRes }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return (dict "image" $image "imageResource" $imageResource) }}

@@ -1,8 +1,10 @@
-# Blog — Adilson Menechini
+# Adilson's Guide
 
-Blog bilíngue (PT/EN) feito com [Hugo](https://gohugo.io/) + tema [PaperMod](https://github.com/adityatelange/hugo-PaperMod), publicado em:
+**Adilson's Guide** — blog trilíngue (PT/EN/ES) feito com [Hugo](https://gohugo.io/) + tema [Mana](https://github.com/Livour/hugo-mana-theme), publicado em:
 
 > **https://adilsonmenechini.github.io/blog/**
+
+Idiomas: PT na raiz · EN em `/blog/en/` · ES em `/blog/es/`
 
 ## Desenvolvimento local
 
@@ -17,17 +19,18 @@ Abra http://localhost:1313/blog/ — PT na raiz, EN em /blog/en/.
 1. Crie o artigo em Português:
 
    ```bash
-   hugo new content posts/meu-novo-post.md
+   hugo new content pt/posts/meu-novo-post.md
    ```
 
-2. Crie a versão em Inglês com **o mesmo nome de arquivo** (é assim que o Hugo
-   liga as duas traduções e o botão PT/EN funciona):
+2. Crie as versões com **o mesmo nome de arquivo** (é assim que o Hugo liga as
+   traduções e o seletor de idioma funciona):
 
    ```bash
    hugo new content en/posts/meu-novo-post.md
+   hugo new content es/posts/meu-novo-post.md
    ```
 
-3. Edite os dois arquivos em `content/posts/` e `content/en/posts/`, troque
+3. Edite os três arquivos em `content/{pt,en,es}/posts/`, troque
    `draft: true` por `draft: false` e faça `git push`.
 
 O GitHub Actions (.github/workflows/hugo.yml) faz o build e o deploy
@@ -59,12 +62,16 @@ rm -rf themes/PaperMod/.git
 
 ```
 blog/
-├── hugo.yml                 # configuração (bilíngue, menus PT/EN)
+├── hugo.yml                 # produção (PaperMod, 3 idiomas)
+├── hugo-mana.yml            # preview do tema Mana (não publica)
+├── hugo-mikosch.yml         # preview do tema Mikosch (não publica)
 ├── content/
-│   ├── posts/               # artigos em Português
-│   ├── en/posts/            # artigos em English
-│   ├── search/              # página de busca (PT)
-│   └── en/search/           # página de busca (EN)
-├── themes/PaperMod/         # tema (local)
+│   ├── pt/                  # artigos em Português (posts, about, search)
+│   ├── en/                  # artigos em English
+│   └── es/                  # artigos em Español
+├── i18n/                    # strings PT/ES (tema e previews)
+├── assets/images/           # avatar/monograma
+├── layouts/partials/        # override do partial de imagem (tema Mana)
+├── themes/                  # PaperMod (produção) + temas de preview locais
 └── .github/workflows/hugo.yml
 ```
