@@ -43,3 +43,82 @@
   --tag-bg: rgba(4, 120, 87, 0.1);
   --tag-color: #065f46;
 }
+
+/* Bordas de vidro com tint violeta (era rgba(196,181,253,0.5)) */
+:root[data-theme="light"] {
+  --glass-border: rgba(110, 231, 183, 0.45);
+}
+
+/* Fundo do body no tema claro (era gradiente lilás) */
+[data-theme="light"] body {
+  background-color: #ffffff;
+  background-image: radial-gradient(
+    circle at center,
+    rgba(16, 185, 129, 0.1) 0%,
+    rgba(209, 250, 229, 0.35) 40%,
+    #ffffff 100%
+  );
+}
+
+/* ============================================================
+   Roxos HARDCODED no CSS do tema (não passam por variáveis).
+   Regra por regra, com os seletores exatos do Mana.
+   ============================================================ */
+
+/* Breadcrumb e afins usam var(--primary-color) que nao existe no tema
+   (fallback roxo #BD5FFF). Definimos a variavel em vez de adivinhar seletores. */
+:root,
+:root[data-theme="light"] {
+  --primary-color: var(--accent-primary);
+}
+
+/* Alerta "question" (era roxo #8b5cf6 em ambos os temas) */
+.post-content-main .alert-question {
+  border-left-color: #059669;
+}
+.post-content-main .alert-question .alert-header {
+  background-color: rgba(5, 150, 105, 0.12);
+}
+[data-theme="light"] .post-content-main .alert-question .alert-header {
+  background-color: rgba(5, 150, 105, 0.15);
+}
+
+/* Código inline dentro de alertas (tema claro) */
+[data-theme="light"] .post-content-main .alert-content code {
+  background-color: rgba(4, 120, 87, 0.12);
+}
+
+/* Bordas dos blocos de código (tema claro) */
+[data-theme="light"] .code-block-wrapper {
+  border-color: rgba(6, 95, 70, 0.25);
+}
+[data-theme="light"] .code-block-header {
+  border-bottom-color: rgba(6, 95, 70, 0.25);
+}
+[data-theme="light"] .code-block-copy,
+[data-theme="light"] .code-block-toggle {
+  border-color: rgba(6, 95, 70, 0.25);
+}
+
+/* Paginação (tema claro) */
+[data-theme="light"] .pagination-link {
+  background-color: rgba(4, 120, 87, 0.1);
+}
+[data-theme="light"] .pagination-number {
+  background-color: rgba(4, 120, 87, 0.1);
+}
+
+/* Fundo do ToC (tema claro) */
+[data-theme="light"] .post-toc {
+  background-image: radial-gradient(
+    circle at center,
+    rgba(16, 185, 129, 0.2) 0%,
+    rgba(209, 250, 229, 0.5) 40%,
+    #ffffff 100%
+  );
+}
+
+/* RTL espelha os alertas */
+.rtl .post-content-main .alert-question {
+  border-right-color: #059669;
+}
