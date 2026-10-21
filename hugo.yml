@@ -139,9 +139,9 @@ params:
 
   avatar:
     home:
-      assetPath: "images/adilson-avatar.svg"
+      assetPath: "images/transparent-logo.png"
     about:
-      assetPath: "images/adilson-avatar.svg"
+      assetPath: "images/transparent-logo.png"
 
   social:
     github: "https://github.com/adilsonmenechini"
