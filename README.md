@@ -1,6 +1,6 @@
 # Adilson's Guide
 
-**Adilson's Guide** — blog trilíngue (PT/EN/ES) feito com [Hugo](https://gohugo.io/) + tema [Mana](https://github.com/Livour/hugo-mana-theme), publicado em:
+**Adilson's Guide**, um blog trilíngue (PT/EN/ES) feito com [Hugo](https://gohugo.io/) + tema [Mana](https://github.com/Livour/hugo-mana-theme), publicado em:
 
 > **https://adilsonmenechini.github.io/blog/**
 
@@ -12,7 +12,7 @@ Idiomas: PT na raiz · EN em `/blog/en/` · ES em `/blog/es/`
 hugo server -D     # -D inclui rascunhos (draft: true)
 ```
 
-Abra http://localhost:1313/blog/ — PT na raiz, EN em /blog/en/.
+Abra http://localhost:1313/blog/ (PT na raiz, EN em /blog/en/, ES em /blog/es/).
 
 ## Como publicar um artigo
 

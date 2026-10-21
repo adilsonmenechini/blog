@@ -51,7 +51,7 @@ languages:
     weight: 1
     title: "Adilson's Guide"
     params:
-      description: "Um blog pessoal sobre SRE, engenharia de plataforma, Kubernetes, GitOps, IaC, observabilidade e IA aplicada — e de tudo um pouco."
+      description: "Um blog pessoal sobre SRE, engenharia de plataforma, Kubernetes, GitOps, IaC, observabilidade e IA aplicada, e de tudo um pouco."
       author: "Adilson Menechini"
       heroTitleLine1: "Adilson's Guide"
       heroTitleLine2: "to everything"
@@ -80,7 +80,7 @@ languages:
     weight: 2
     title: "Adilson's Guide"
     params:
-      description: "A personal blog about SRE, platform engineering, Kubernetes, GitOps, IaC, observability and applied AI — plus a bit of everything."
+      description: "A personal blog about SRE, platform engineering, Kubernetes, GitOps, IaC, observability and applied AI, plus a bit of everything."
       author: "Adilson Menechini"
       heroTitleLine1: "Adilson's Guide"
       heroTitleLine2: "to everything"
@@ -109,7 +109,7 @@ languages:
     weight: 3
     title: "Adilson's Guide"
     params:
-      description: "Un blog personal sobre SRE, platform engineering, Kubernetes, GitOps, IaC, observabilidad e IA aplicada — y de todo un poco."
+      description: "Un blog personal sobre SRE, platform engineering, Kubernetes, GitOps, IaC, observabilidad e IA aplicada, y de todo un poco."
       author: "Adilson Menechini"
       heroTitleLine1: "Adilson's Guide"
       heroTitleLine2: "to everything"
