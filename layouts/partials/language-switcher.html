@@ -10,6 +10,11 @@
 {{ end }}
 
 {{ if or .IsHome (gt (len $translations) 0) }}
+  {{/* Sem o icone de traducao (glifo 文A): mostra apenas a sigla do idioma, includive no mobile */}}
+  <style>
+    .language-switcher-icon { display: none; }
+    .language-switcher-label { display: inline !important; }
+  </style>
   <div class="language-switcher">
     <button
       class="language-switcher-toggle"
@@ -17,13 +22,6 @@
       aria-label="{{ i18n "language" }}"
       aria-expanded="false"
       aria-haspopup="true">
-      <svg class="language-switcher-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-      </svg>
       <span class="language-switcher-label">{{ site.Language.Lang | upper }}</span>
     </button>
     <div class="language-switcher-dropdown" aria-hidden="true">
