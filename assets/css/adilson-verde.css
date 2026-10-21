@@ -1,0 +1,45 @@
+/* ============================================================
+   Paleta "Verde Mananciais" — Adilson's Guide
+   Sobrescreve o roxo do tema Mana por um verde escuro.
+   Carregado por último, depois do bundle do tema.
+   ============================================================ */
+
+/* Tema escuro (padrão do Mana) */
+:root,
+:root[data-theme="dark"] {
+  --accent-primary: #059669; /* Verde esmeralda escuro (era roxo #b063e0) */
+  --accent-mid-purple: #10b981; /* Verde médio (era #c485f6) */
+  --accent-light-purple: #34d399; /* Verde claro (era #dbabff) */
+  --accent-secondary: #00ffff; /* Ciano mantido */
+  --accent-hover: #10b981;
+
+  --accent-primary-rgba-03: rgba(5, 150, 105, 0.3);
+  --accent-primary-rgba-05: rgba(5, 150, 105, 0.5);
+  --accent-light-purple-rgba-01: rgba(52, 211, 153, 0.1);
+  --accent-light-purple-rgba-03: rgba(52, 211, 153, 0.3);
+  --accent-mid-purple-rgba-05: rgba(16, 185, 129, 0.05);
+  --accent-mid-purple-rgba-01: rgba(16, 185, 129, 0.1);
+  --accent-mid-purple-rgba-02: rgba(16, 185, 129, 0.2);
+
+  --tag-color: var(--accent-light-purple);
+}
+
+/* Tema claro: verdes ainda mais escuros para contraste */
+:root[data-theme="light"] {
+  --accent-primary: #065f46; /* Esmeralda 800 (era #6b21a8) */
+  --accent-mid-purple: #047857; /* Esmeralda 700 (era #7c3aed) */
+  --accent-light-purple: #059669; /* Esmeralda 600 (era #9333ea) */
+  --accent-secondary: #065f46;
+  --accent-hover: #047857;
+
+  --accent-primary-rgba-03: rgba(6, 95, 70, 0.3);
+  --accent-primary-rgba-05: rgba(6, 95, 70, 0.5);
+  --accent-light-purple-rgba-01: rgba(5, 150, 105, 0.1);
+  --accent-light-purple-rgba-03: rgba(5, 150, 105, 0.3);
+  --accent-mid-purple-rgba-05: rgba(4, 120, 87, 0.05);
+  --accent-mid-purple-rgba-01: rgba(4, 120, 87, 0.1);
+  --accent-mid-purple-rgba-02: rgba(4, 120, 87, 0.2);
+
+  --tag-bg: rgba(4, 120, 87, 0.1);
+  --tag-color: #065f46;
+}
