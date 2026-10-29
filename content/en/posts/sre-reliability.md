@@ -5,6 +5,8 @@ draft: false
 tags: ["SRE", "DevOps", "Reliability Engineering", "Observability", "Incident Management", "SLO", "Cloud Native"]
 summary: "Chasing 100% availability can make an organization slower, more expensive, and not necessarily more reliable. SLOs, error budgets, automation, and blameless postmortems turn reliability into a shared decision instead of a battle of opinions."
 ---
+{{< audio slug="sre-reliability" >}}
+
 
 There is a widely held idea in the infrastructure world: the job of people who operate systems is to prevent them from going down. The fewer incidents, the better. The higher the availability, the better. And if it were possible, everything should run 100% of the time.
 

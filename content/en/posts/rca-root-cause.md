@@ -5,6 +5,8 @@ draft: false
 tags: ["SRE", "Incident Management", "RCA", "Postmortem"]
 summary: "Recovering the service does not eliminate the conditions that produced the failure. An RCA only has value when it turns evidence into verifiable changes to the system, the process, or the controls, not into a document that explains the past."
 ---
+{{< audio slug="rca-root-cause" >}}
+
 
 ## Introduction: the incident is over, but was the problem solved?
 

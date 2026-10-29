@@ -9,3 +9,4 @@ themes/hugo-mikosch/
 
 # Sistema
 .DS_Store
+*.tmp

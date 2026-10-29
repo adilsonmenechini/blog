@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""Gera audiobook PT-BR (Edge TTS / AntonioNeural) dos artigos do blog.
-Uso: python3 tools/gen-audio.py [slug ...]   # sem args = todos os posts PT
+"""Gera audiobook dos artigos do blog (Edge TTS).
+Uso: python3 tools/gen-audio.py [pt|en] [slug ...]   # sem args = pt + todos os posts
 """
 import pathlib, re, subprocess, sys, html
 
-PT_VOICE = "pt-BR-AntonioNeural"
-CONTENT = pathlib.Path("content/pt/posts")
-STATIC = pathlib.Path("static/audio/pt")
+VOICE = {"pt": "pt-BR-AntonioNeural", "en": "en-US-AndrewNeural", "es": "es-ES-AlvaroNeural"}
 RATE = "+0%"
 
-def md_to_speech(md: str) -> str:
+def md_to_speech(md: str, lang: str) -> str:
+    cue = "[Trecho de código exibido no artigo.]" if lang == "pt" else "[Code snippet shown in the article.]"
     # remove frontmatter
     md = re.sub(r"\A---\n.*?\n---\n", "", md, flags=re.S)
-    # blocos de código: cues curtos
-    md = re.sub(r"```[a-z]*\n.*?\n```", " [Trecho de código exibido no artigo.] ", md, flags=re.S)
+    # remove hugo shortcodes
+    md = re.sub(r"\{\{[%<].*?[%>]\}\}", "", md)
+    md = re.sub(r"```[a-z]*\n.*?\n```", f" {cue} ", md, flags=re.S)
     # tabelas -> frases faláveis
     out_lines = []
     for ln in md.splitlines():
@@ -45,25 +45,33 @@ def md_to_speech(md: str) -> str:
     md = re.sub(r"\n{3,}", "\n\n", md)
     return md.strip()
 
-def gen(slug: str) -> None:
-    src = CONTENT / f"{slug}.md"
-    text = md_to_speech(src.read_text(encoding="utf-8"))
-    txt = pathlib.Path(f"/tmp/tts-{slug}.txt")
+def gen(lang: str, slug: str) -> None:
+    content = pathlib.Path(f"content/{lang}/posts")
+    src = content / f"{slug}.md"
+    text = md_to_speech(src.read_text(encoding="utf-8"), lang)
+    static = pathlib.Path(f"static/audio/{lang}")
+    txt = pathlib.Path(f"/tmp/tts-{lang}-{slug}.txt")
     txt.write_text(text, encoding="utf-8")
-    out = STATIC / f"{slug}.mp3"
+    out = static / f"{slug}.mp3"
     out.parent.mkdir(parents=True, exist_ok=True)
+    voice = VOICE[lang]
     r = subprocess.run(
-        ["uvx", "edge-tts", "--voice", PT_VOICE, "--rate", RATE,
+        ["uvx", "edge-tts", "--voice", voice, "--rate", RATE,
          "--file", str(txt), "--write-media", str(out)],
         capture_output=True, text=True)
     if r.returncode != 0:
         print(f"[ERRO] {slug}: {r.stderr[-300:]}")
         sys.exit(1)
     kb = out.stat().st_size // 1024
-    print(f"[OK] {out} (~{kb} KB, voz {PT_VOICE}, taxa {RATE})")
+    print(f"[OK] {out} (~{kb} KB, voz {voice}, taxa {RATE})")
 
 if __name__ == "__main__":
-    slugs = sys.argv[1:] or [p.stem for p in sorted(CONTENT.glob("*.md"))]
-    print("Gerando:", ", ".join(slugs))
-    for s in slugs:
-        gen(s)
+    args = sys.argv[1:]
+    lang = "pt"
+    if args and args[0] in VOICE:
+        lang = args.pop(0)
+    slug_args = args or [p.stem for p in sorted(pathlib.Path(f"content/{lang}/posts").glob("*.md"))
+                         if p.stem != "_index"]
+    print(f"Idioma {lang}: gerando", ", ".join(slug_args))
+    for s in slug_args:
+        gen(lang, s)

@@ -5,6 +5,8 @@ draft: false
 tags: ["Kubernetes", "Cilium", "eBPF", "Networking", "Linux", "Performance", "Cloud Native"]
 summary: "Is kube-proxy mandatory? With eBPF, Cilium implements Service forwarding directly in the Linux kernel. Before removing components, understand the packet path, where the traditional model gets expensive, and when the migration is worth it."
 ---
+{{< audio slug="kube-proxy-ebpf" >}}
+
 
 For years, treating kube-proxy as a mandatory piece of any Kubernetes cluster seemed as natural as installing a container runtime or configuring a CNI. You create a cluster, install the network components, and kube-proxy is there, quietly doing its job.
 

@@ -5,6 +5,8 @@ draft: false
 tags: ["Kubernetes", "FinOps", "Autoscaling"]
 summary: "Scaling the application with demand and sizing the infrastructure behind it are different problems. With KEDA and Karpenter working together, the cluster scales when it needs to, shrinks when it can, and costs less to deliver the same result."
 ---
+{{< audio slug="karpenter-keda" >}}
+
 
 Have you ever stopped to think about how much money you might be spending on a Kubernetes cluster that runs all day long, even when it has almost no work to do?
 
