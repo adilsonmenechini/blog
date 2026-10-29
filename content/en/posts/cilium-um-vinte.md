@@ -1,6 +1,6 @@
 ---
 title: "Cilium 1.20: is it time to turn off some Kubernetes boxes?"
-date: 2026-09-21
+date: 2026-10-28
 draft: false
 tags: ["Cilium", "Kubernetes", "Gateway API", "eBPF", "Networking"]
 summary: "Cilium 1.20 brings TCPRoute, UDPRoute, ExternalAuth and more features that allow consolidating gateway, authentication and exposure of TCP/UDP services in a single platform. Is it possible to simplify the architecture?"

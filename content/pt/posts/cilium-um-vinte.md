@@ -1,6 +1,6 @@
 ---
 title: "Cilium 1.20: será que dá para desligar mais umas caixas do Kubernetes?"
-date: 2026-09-21
+date: 2026-10-28
 draft: false
 tags: ["Cilium", "Kubernetes", "Gateway API", "eBPF", "Networking"]
 summary: "O Cilium 1.20 traz TCPRoute, UDPRoute, ExternalAuth e mais recursos que permitem consolidar gateway, autenticação e exposição de serviços TCP/UDP numa única plataforma. Será que conseguimos simplificar a arquitetura?"
